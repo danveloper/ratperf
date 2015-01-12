@@ -1,0 +1,26 @@
+buildscript {
+  repositories {
+    jcenter()
+    maven { url "http://oss.jfrog.org/oss-snapshot-local" }
+    maven { url "http://clinker.netty.io/nexus/content/repositories/snapshots" }
+  }
+  dependencies {
+    classpath 'io.ratpack:ratpack-gradle:0.9.13-SNAPSHOT'
+  }
+}
+
+apply plugin: 'io.ratpack.ratpack-java'
+apply plugin: 'idea'
+
+repositories {
+  jcenter()
+  maven { url "http://oss.jfrog.org/oss-snapshot-local" }
+  maven { url "http://clinker.netty.io/nexus/content/repositories/snapshots" }
+}
+
+dependencies {
+  runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.0.1'
+  runtime 'org.apache.logging.log4j:log4j-api:2.0.1'
+  runtime 'org.apache.logging.log4j:log4j-core:2.0.1'
+  runtime 'com.lmax:disruptor:3.3.0'
+}
